@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17170f" />
+  <title>Epic Worlds — Interactive Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="title-card" id="titleCard" aria-hidden="true">
+    <img src="assets/ramayana-title-card.png" alt="" class="title-card-image">
+    <div class="title-card-shine"></div>
+  </div>
+  <main class="experience" id="experience" aria-label="Interactive cinematic map">
+    <div class="landscape" id="landscape" aria-hidden="true"></div>
+    <div class="landscape-shade" aria-hidden="true"></div>
+    <div class="map-landmarks" id="mapLandmarks" aria-label="Legendary locations on the map"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <div class="brand" aria-label="Ramayana"><img src="assets/title-heading.png" alt="Ramayana" /></div>
+      <div class="chapter-count"><span id="currentCount">01</span><i></i><span>04</span></div>
+    </header>
+
+    <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+      <p class="eyebrow">EXPLORE THE WORLD</p>
+      <nav id="menuLinks" aria-label="Locations"></nav>
+      <p class="menu-note">Scroll to travel between legendary lands.</p>
+    </aside>
+
+    <section class="location-copy" aria-live="polite">
+      <p class="eyebrow"><span class="eyebrow-line"></span><span id="regionLabel">THE KINGDOM OF KOSALA</span></p>
+      <h1 id="locationTitle">Ayodhya</h1>
+      <p class="description" id="locationDescription">A radiant royal city, shaped by ancient traditions, devotion, and the promise of a great destiny.</p>
+      <button class="discover-button" id="discoverButton"><span>DISCOVER THIS LAND</span><span class="arrow">↗</span></button>
+    </section>
+
+    <div class="scroll-cue" id="scrollCue"><span class="scroll-line"></span><span>SCROLL TO EXPLORE</span><span class="scroll-arrows">↓</span></div>
+    <footer class="bottom-bar">
+      <span class="coordinates" id="coordinates">26° 48′ N&nbsp; / &nbsp;82° 12′ E</span>
+      <span class="bottom-caption">A WORLD OF LEGENDS <b>—</b> AN EPIC JOURNEY</span>
+      <button class="sound-button" id="motionButton" aria-pressed="true"><span class="motion-dot"></span><span id="motionLabel">MOTION ON</span></button>
+    </footer>
+    <div class="detail-toast" id="detailToast" role="status"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
