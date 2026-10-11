@@ -51,3 +51,190 @@
   .map-landmark[data-location="lanka"]{left:58%!important;top:53%!important}
 }
 @media(prefers-reduced-motion:reduce){.cursor-spark{display:none}}
+
+/* RESPONSIVE FINISHING PASS — laptop, tablet, mobile, portrait and landscape */
+:root { color-scheme: dark; }
+html { width: 100%; min-width: 0; height: 100%; }
+body { width: 100%; min-width: 0; min-height: 100%; }
+.experience { width: 100%; height: 100vh; height: 100dvh; min-height: 0; }
+.title-card { width: 100%; height: 100vh; height: 100dvh; }
+.title-card-image { object-fit: cover; object-position: center; }
+
+/* Medium laptops and tablets */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .topbar { height: 78px; padding-inline: 3.5vw; }
+  .brand { width: min(180px, 24vw); }
+  .brand img { max-height: 42px; }
+  .location-copy { left: 5vw; bottom: 23%; width: min(410px, 43vw); }
+  h1 { font-size: clamp(48px, 6.4vw, 76px); }
+  .description { max-width: 310px; font-size: 12px; }
+  .location-art { width: min(60vw, 760px); max-height: 68vh; right: 1vw; }
+  .map-landmark { width: clamp(115px, 14vw, 175px); }
+  .map-landmark.active { width: clamp(155px, 18vw, 225px); }
+  .map-landmark img { max-height: 20vh; }
+  .scroll-cue { right: 2.5vw; }
+  .bottom-bar { padding-inline: 3.5vw; }
+}
+
+/* Phones and narrow portrait screens */
+@media (max-width: 700px) {
+  .experience { height: 100vh; height: 100dvh; min-height: 0; }
+  .landscape { background-size: cover; background-position: 50% 50%; }
+  .landscape-shade { background: linear-gradient(0deg,rgba(10,13,10,.88),rgba(10,13,10,.35) 42%,rgba(10,13,10,.08) 100%),linear-gradient(90deg,rgba(10,13,10,.18),transparent 85%); }
+  .topbar { top: max(0px, env(safe-area-inset-top)); height: 62px; padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
+  .menu-button { flex: 0 0 34px; }
+  .brand { width: clamp(96px, 30vw, 132px); }
+  .brand img { max-height: 31px; }
+  .chapter-count { font-size: 9px; gap: 6px; }
+  .chapter-count i { width: 12px; }
+  .location-copy { left: max(20px, env(safe-area-inset-left)); bottom: calc(11% + env(safe-area-inset-bottom)); width: min(78vw, 370px); }
+  .eyebrow { font-size: 8px; letter-spacing: .15em; gap: 8px; }
+  .eyebrow-line { width: 20px; flex: 0 0 20px; }
+  h1 { font-size: clamp(35px, 10.5vw, 62px); line-height: .98; letter-spacing: -.04em; overflow-wrap: anywhere; margin: 13px 0 12px; }
+  .description { max-width: 100%; font-size: clamp(10px, 2.9vw, 12px); line-height: 1.65; }
+  .discover-button { margin-top: 17px; min-height: 42px; padding: 10px 12px; gap: 12px; font-size: 8px; letter-spacing: .12em; }
+  .location-art { width: 96vw; max-width: 600px; max-height: 39vh; right: -9vw; top: 32%; }
+  .location-art.visible { transform: translateY(-31%) scale(1); }
+  .scroll-cue { right: max(12px, env(safe-area-inset-right)); bottom: 13%; gap: 7px; font-size: 6px; letter-spacing: .15em; }
+  .scroll-line { height: 28px; }
+  .bottom-bar { height: calc(43px + env(safe-area-inset-bottom)); padding: 0 max(14px, env(safe-area-inset-right)) env(safe-area-inset-bottom) max(14px, env(safe-area-inset-left)); font-size: 6px; letter-spacing: .09em; }
+  .bottom-caption { display: none; }
+  .coordinates { max-width: 46%; white-space: nowrap; }
+  .sound-button { gap: 6px; }
+  .motion-dot { width: 5px; height: 5px; }
+  .menu-panel { top: calc(60px + env(safe-area-inset-top)); left: 14px; width: min(280px, calc(100% - 28px)); max-height: calc(100dvh - 90px); overflow-y: auto; padding: 20px; }
+  .menu-panel nav button { padding: 13px 0; font-size: 18px; }
+  .menu-note { margin-top: 14px; }
+  .detail-toast { bottom: calc(54px + env(safe-area-inset-bottom)); max-width: calc(100% - 32px); white-space: normal; text-align: center; line-height: 1.5; }
+  .map-landmark { width: clamp(78px, 22vw, 125px); }
+  .map-landmark img { max-height: 14vh; }
+  .map-landmark.active { width: clamp(112px, 31vw, 168px); max-width: 46vw; transform: translate(-50%,-50%) scale(1.04); }
+  .map-landmark.active img { max-height: 19vh; }
+  .map-landmark .landmark-label { font-size: clamp(6px, 1.8vw, 8px); letter-spacing: .1em; bottom: -4px; }
+  .map-landmark[data-location="ayodhya"] { left: 45% !important; top: 27% !important; }
+  .map-landmark[data-location="mithila"] { left: 67% !important; top: 31% !important; }
+  .map-landmark[data-location="kishkindha"] { left: 40% !important; top: 43% !important; }
+  .map-landmark[data-location="lanka"] { left: 58% !important; top: 53% !important; }
+  /* Touchscreens should use their normal touch pointer; retain swipe/tap interactions. */
+  .experience, .experience * { cursor: auto !important; }
+  .cursor-spark { display: none !important; }
+}
+
+/* Very narrow phones (including older 320px-wide devices) */
+@media (max-width: 380px) {
+  .topbar { padding-inline: 12px; }
+  .brand { width: 92px; }
+  .brand img { max-height: 27px; }
+  .chapter-count { gap: 4px; font-size: 8px; }
+  .chapter-count i { width: 9px; }
+  .location-copy { left: 16px; width: calc(100% - 52px); bottom: calc(9% + env(safe-area-inset-bottom)); }
+  h1 { font-size: clamp(32px, 10vw, 40px); }
+  .description { font-size: 10px; }
+  .discover-button { min-height: 38px; padding: 8px 10px; }
+  .scroll-cue { right: 7px; font-size: 5px; }
+  .bottom-bar { padding-inline: 10px; }
+  .map-landmark { width: 76px; }
+  .map-landmark.active { width: 108px; }
+}
+
+/* Short landscape phones: preserve usable copy and keep map art out of the controls. */
+@media (max-width: 900px) and (orientation: landscape) {
+  .experience { min-height: 0; }
+  .topbar { height: 48px; padding-inline: 22px; }
+  .brand { width: 105px; }
+  .brand img { max-height: 27px; }
+  .location-copy { left: 5vw; bottom: 15%; width: min(44vw, 380px); }
+  .eyebrow { font-size: 7px; }
+  h1 { font-size: clamp(30px, 6vw, 50px); margin: 8px 0; }
+  .description { font-size: 9px; line-height: 1.45; max-width: 280px; }
+  .discover-button { margin-top: 10px; min-height: 32px; padding: 7px 10px; font-size: 7px; }
+  .location-art { width: 52vw; max-height: 68vh; right: 3vw; top: 50%; }
+  .map-landmark { width: clamp(70px, 12vw, 115px); }
+  .map-landmark.active { width: clamp(95px, 16vw, 145px); }
+  .map-landmark img { max-height: 24vh; }
+  .map-landmark[data-location="ayodhya"] { left: 45% !important; top: 26% !important; }
+  .map-landmark[data-location="mithila"] { left: 67% !important; top: 28% !important; }
+  .map-landmark[data-location="kishkindha"] { left: 40% !important; top: 46% !important; }
+  .map-landmark[data-location="lanka"] { left: 58% !important; top: 60% !important; }
+  .scroll-cue { right: 16px; bottom: 17%; }
+  .bottom-bar { height: 36px; padding-inline: 22px; font-size: 6px; }
+  .bottom-caption { display: block; font-size: 5px; }
+  .menu-panel { top: 46px; max-height: calc(100dvh - 55px); padding: 14px 20px; }
+}
+
+/* Very wide desktop displays: keep the title readable and map artwork proportional. */
+@media (min-width: 1600px) {
+  .location-copy { left: max(6.8vw, calc((100vw - 1700px) / 2 + 80px)); width: min(520px, 32vw); }
+  h1 { font-size: clamp(78px, 5.8vw, 118px); }
+  .description { font-size: 14px; max-width: 390px; }
+  .map-landmark { width: clamp(190px, 10vw, 250px); }
+  .map-landmark.active { width: clamp(250px, 13vw, 320px); }
+}
+
+/* Tiny-height laptop windows and split-screen layouts */
+@media (min-width: 701px) and (max-height: 650px) {
+  .topbar { height: 58px; }
+  .brand img { max-height: 30px; }
+  .location-copy { bottom: 15%; }
+  h1 { font-size: clamp(38px, 6vh, 62px); margin: 10px 0; }
+  .description { font-size: 10px; line-height: 1.55; }
+  .discover-button { margin-top: 14px; padding: 9px 12px; }
+  .bottom-bar { height: 42px; }
+  .map-landmark img { max-height: 26vh; }
+}
+
+
+/* MOBILE MAP ALIGNMENT FIX
+   Landmark anchors are tuned to the portrait crop of the wide atlas background.
+   Keep each palace on its corresponding geographic feature instead of using the
+   earlier compressed vertical positions. */
+@media (max-width: 700px) and (orientation: portrait) {
+  .map-landmark[data-location="ayodhya"] {
+    left: 43% !important;
+    top: 35% !important;
+  }
+  .map-landmark[data-location="mithila"] {
+    left: 63% !important;
+    top: 34% !important;
+  }
+  .map-landmark[data-location="kishkindha"] {
+    left: 44% !important;
+    top: 60% !important;
+  }
+  .map-landmark[data-location="lanka"] {
+    left: 63% !important;
+    top: 79% !important;
+  }
+  .map-landmark.active {
+    max-width: 42vw;
+  }
+  .map-landmark.active img {
+    max-height: 17vh;
+  }
+  .map-landmark .landmark-label {
+    margin-top: 2px;
+    text-shadow: 0 2px 8px #07120f, 0 0 14px rgba(245,193,83,.8);
+  }
+}
+
+/* Landscape phones use the full-width map composition, so keep their own anchors. */
+@media (max-width: 900px) and (orientation: landscape) {
+  .map-landmark[data-location="ayodhya"] { left: 49.5% !important; top: 37% !important; }
+  .map-landmark[data-location="mithila"] { left: 59% !important; top: 32% !important; }
+  .map-landmark[data-location="kishkindha"] { left: 45.5% !important; top: 61% !important; }
+  .map-landmark[data-location="lanka"] { left: 55.5% !important; top: 78% !important; }
+}
+
+/* Final portrait-phone placement: Lanka sits on the island itself, below the hero copy. */
+@media (max-width: 700px) and (orientation: portrait) {
+  .map-landmark[data-location="lanka"] {
+    left: 73% !important;
+    top: 84% !important;
+  }
+  .map-landmark[data-location="lanka"].active {
+    max-width: 40vw;
+  }
+  .map-landmark[data-location="lanka"].active img {
+    max-height: 15vh;
+  }
+}
